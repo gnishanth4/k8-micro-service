@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-shoes-deployment
+spec:
+  selector:
+    matchLabels:
+      app: shoe
+  replicas: 1
+  template:
+    metadata:
+     labels:
+       app: shoe
+    spec:
+     containers:
+     - name: shoe
+       image: gnishanth444/k8-micro-services:app-shoes-0.0.2
+       ports:
+       - containerPort: 8080
+         name: shoe
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shoe
+spec:
+  selector:
+    app: shoe
+  ports:
+   - port: 1002
+     targetPort: 1002
+  type: ClusterIP
+~
+
