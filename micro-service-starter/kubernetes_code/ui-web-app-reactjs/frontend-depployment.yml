@@ -38,4 +38,4 @@ spec:
      targetPort: 8080
      nodePort: 30009
   type: NodePort
-~                   
+                   
