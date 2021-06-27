@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-offers-deployment
+spec:
+  selector:
+    matchLabels:
+      app: offer
+  replicas: 1
+  template:
+    metadata:
+     labels:
+       app: offer
+    spec:
+     containers:
+     - name: shoe
+       image: gnishanth444/k8-micro-services:app-offers-0.0.1
+       ports:
+       - containerPort: 1001
+         name: offer
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: offer
+spec:
+  selector:
+    app: offer
+    ports:
+   - port: 1001
+     targetPort: 1001
+  type: ClusterIP
