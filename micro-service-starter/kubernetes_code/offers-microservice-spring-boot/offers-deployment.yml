@@ -13,7 +13,7 @@ spec:
        app: offer
     spec:
      containers:
-     - name: shoe
+     - name: offer
        image: gnishanth444/k8-micro-services:app-offers-0.0.1
        ports:
        - containerPort: 1001
@@ -27,7 +27,7 @@ metadata:
 spec:
   selector:
     app: offer
-    ports:
-   - port: 1001
-     targetPort: 1001
+  ports:
+    - port: 1001
+      targetPort: 1001
   type: ClusterIP

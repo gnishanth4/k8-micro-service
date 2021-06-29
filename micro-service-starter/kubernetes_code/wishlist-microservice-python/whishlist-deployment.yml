@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: whishlist
+      app: wishlist
   replicas: 1
   template:
     metadata:
      labels:
-       app: whishlist
+       app: wishlist
     spec:
      containers:
      - name: shoe
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: whishlist
+  name: wishlist
 spec:
   selector:
-    app: whishlist
+    app: wishlist
   ports:
    - port: 5000
      targetPort: 5000

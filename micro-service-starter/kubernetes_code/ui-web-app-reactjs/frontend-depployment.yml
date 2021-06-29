@@ -14,16 +14,9 @@ spec:
     spec:
      containers:
      - name: frontend
-       image: gnishanth444/k8-micro-services:frontend-ui-0.0.4
+       image: gnishanth444/k8-micro-services:frontend-0.0.6
        ports:
        - containerPort: 8080
-       resources:
-          limits:
-            cpu: "1"
-            memory: "200Mi"
-          requests:
-            cpu: "0.1"
-            memory: "100Mi"
 
 ---
 apiVersion: v1

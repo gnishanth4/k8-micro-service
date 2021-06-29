@@ -14,7 +14,7 @@ spec:
     spec:
      containers:
      - name: cart
-       image: gnishanth444/k8-micro-services:app-shoes-0.0.2
+       image: gnishanth444/k8-micro-services:app-cart-0.0.1
        ports:
        - containerPort: 1004
          name: cart

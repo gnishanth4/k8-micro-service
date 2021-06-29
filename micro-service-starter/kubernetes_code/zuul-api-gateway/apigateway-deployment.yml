@@ -14,10 +14,20 @@ spec:
     spec:
      containers:
      - name: apigateway
-       image: gnishanth444/k8-micro-services:apigateway-0.0.4
+       image: gnishanth444/k8-micro-services:apigateway-0.0.7
        ports:
        - containerPort: 9999
-
+         name: apigateway
+     affinity:
+       podAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - frontend
+          topologyKey: "kubernetes.io/hostname"   
 ---
 apiVersion: v1
 kind: Service
